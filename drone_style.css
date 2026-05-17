@@ -1,0 +1,105 @@
+/* 기본 초기화 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow: hidden; /* 스크롤바가 생기지 않도록 숨김 */
+    background-color: #87CEEB; /* 로딩 중 배경색 (하늘색) */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* 3D 화면을 브라우저 꽉 채우게 설정 */
+#canvas-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1; /* 가장 뒤쪽에 배치 */
+}
+
+/* 헤드업 디스플레이 (HUD - 조종석 화면) UI */
+.hud {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    pointer-events: none; /* 클릭을 방해하지 않음 */
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+h1 {
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.7); /* 글씨 그림자로 가독성 향상 */
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/* 조작법 안내 상자 */
+.controls-info {
+    background: rgba(15, 23, 42, 0.5);
+    backdrop-filter: blur(5px); /* 반투명 유리 효과 */
+    padding: 20px;
+    border-radius: 12px;
+    color: white;
+    width: max-content;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.controls-info p {
+    margin: 12px 0;
+    font-size: 1.05rem;
+}
+
+/* 키보드 버튼 디자인 */
+kbd {
+    background: #334155;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-family: monospace;
+    font-weight: bold;
+    border-bottom: 2px solid #0f172a; /* 입체감 효과 */
+    margin-right: 5px;
+    color: #38bdf8;
+}
+
+/* 하단 대시보드 통계 UI */
+.dashboard {
+    display: flex;
+    gap: 40px;
+    align-self: center; /* 가운데 정렬 */
+    background: rgba(15, 23, 42, 0.7);
+    backdrop-filter: blur(10px);
+    padding: 20px 40px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+}
+
+.stat {
+    text-align: center;
+    color: white;
+}
+
+.stat .label {
+    display: block;
+    font-size: 0.9rem;
+    color: #94a3b8;
+    margin-bottom: 5px;
+}
+
+.stat span:not(.label) {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #34d399; /* 네온 그린 포인트 색상 */
+}

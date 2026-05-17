@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D 드론 시뮬레이터</title>
+    <link rel="stylesheet" href="drone_style.css">
+    <!-- 3D 그래픽을 구현하기 위한 Three.js 라이브러리를 불러옵니다 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+    <!-- 3D 화면이 그려질 공간 -->
+    <div id="canvas-container"></div>
+    
+    <!-- 조종석 UI (계기판) -->
+    <div class="hud">
+        <h1>3D 드론 시뮬레이터</h1>
+        
+        <div class="controls-info">
+            <p><kbd>W</kbd> <kbd>S</kbd> 기체 기울이기 (전진/후진)</p>
+            <p><kbd>A</kbd> <kbd>D</kbd> 기체 기울이기 (좌우 이동)</p>
+            <p><kbd>Q</kbd> <kbd>E</kbd> 기체 회전 (좌우 방향 전환)</p>
+            <p><kbd>Shift</kbd> 상승 / <kbd>Space</kbd> 하강</p>
+        </div>
+        
+        <div class="dashboard">
+            <div class="stat">
+                <span class="label">고도(ALT)</span>
+                <div><span id="altMeter">0.0</span> m</div>
+            </div>
+            <div class="stat">
+                <span class="label">속도(SPD)</span>
+                <div><span id="spdMeter">0</span> km/h</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3D 물리 엔진 및 그래픽 스크립트 불러오기 -->
+    <script src="drone_script.js"></script>
+</body>
+</html>

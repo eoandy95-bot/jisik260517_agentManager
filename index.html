@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>모던 테트리스</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="left-panel">
+            <div class="info-box">
+                <h2>HOLD</h2>
+                <canvas id="hold-canvas" width="120" height="120"></canvas>
+            </div>
+            <div class="info-box score-box">
+                <h2>SCORE</h2>
+                <p id="score">0</p>
+            </div>
+            <div class="info-box">
+                <h2>LEVEL</h2>
+                <p id="level">1</p>
+            </div>
+            <div class="info-box">
+                <h2>LINES</h2>
+                <p id="lines">0</p>
+            </div>
+        </div>
+        <div class="board-container">
+            <canvas id="game-canvas" width="300" height="600"></canvas>
+            <div id="game-over-screen" class="hidden">
+                <h2>GAME OVER</h2>
+                <button id="restart-btn">다시 시작</button>
+            </div>
+        </div>
+        <div class="right-panel">
+            <div class="info-box">
+                <h2>NEXT</h2>
+                <canvas id="next-canvas" width="120" height="360"></canvas>
+            </div>
+            <button id="start-btn" class="btn primary">시작</button>
+            <button id="pause-btn" class="btn secondary" disabled>일시정지</button>
+            <div class="controls-help">
+                <p><span>↑</span> 회전</p>
+                <p><span>←</span> <span>→</span> 이동</p>
+                <p><span>↓</span> 소프트 드롭</p>
+                <p><span>Space</span> 하드 드롭</p>
+                <p><span>C</span> 홀드</p>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
